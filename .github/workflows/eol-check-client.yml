@@ -1,0 +1,21 @@
+name: eol-check-client
+
+on: workflow_dispatch
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Run EOL Scan
+        uses: mkmrgn/eol-scan-action@v1
+        with:
+          auth-token: ${{ secrets.HD_CI_CREDENTIAL }}
+          method: client
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v5
+        with:
+          name: eol-report
+          path: ${{ github.workspace }}/herodevs.report.json
