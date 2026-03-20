@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: eol-report
-          path: ${{ steps.eol.outputs.report-path }}
+          path: ${{ github.workspace }}/herodevs.report.json
