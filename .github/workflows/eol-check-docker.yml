@@ -1,4 +1,4 @@
-name: eol-check
+name: eol-check-docker
 
 on: workflow_dispatch
 
